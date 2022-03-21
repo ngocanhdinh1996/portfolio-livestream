@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-%iz!w-%s5h!cfcsvse#eh(9f)&l(5nce&++*!4e31n&i_b(c%#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['portolio-livee.herokuapp.com']
+ALLOWED_HOSTS = ['portfolio-livestreamm.herokuapp.com']
 
 
 # Application definition
