@@ -1,3 +1,4 @@
+
 from re import L
 from django.db import models
 import uuid
@@ -14,7 +15,16 @@ class Project(models.Model):
     id = models.UUIDField(default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
     def __str__(self):
-        return self.title
+        return self.title 
+
+class Comment(models.Model):
+    project = models.ForeignKey(Project, on_delete=models.CASCADE) 
+    name = models.CharField(max_length=200) 
+    body = models.TextField(null=True, blank=True) 
+    created = models.DateTimeField(auto_now_add=True, null=True) 
+
+    def __str__(self):
+        return self.body[0:50]
 
     
 class Skill(models.Model):
@@ -48,3 +58,11 @@ class Message(models.Model):
         return self.name
  
  
+class Endorsement(models.Model):
+    name = models.CharField(max_length=200, null=True) 
+    body = models.TextField() 
+    approved = models.BooleanField(default=False, null=True)
+    featured = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.body[0:50]
