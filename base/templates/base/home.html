@@ -58,9 +58,15 @@
         <h3>More About Me</h3>
 
         {% for skill in detailedSkills %} 
-        <div class="skill--wrapper">
-            <h5>{{skill.title}}</h5>
-            <p>{{skill.body}}</p>
+        <div class="skill--wrapper"> 
+            {% if skill.logo %}
+                <img class='skill--logo' src="{{skill.logo.url}}">
+            {% endif %}
+            <div>
+                <h5>{{skill.title}}</h5>
+                <p>{{skill.body}}</p>
+            </div>
+            
         </div>
 
         {% endfor %}

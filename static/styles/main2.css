@@ -117,9 +117,18 @@ body{
     padding: 1em;
 }
 
-.skill-wrapper{
+.skill--wrapper{
     margin-top: 2em;
     margin-bottom: 2em;
+    display: flex; 
+    gap: 2em;
+    align-items: start;
+}
+
+.skill--logo{
+    height: 60px;
+    width: 60px;
+
 }
 
 .other--skills--wrapper{
@@ -164,5 +173,29 @@ body{
     }
     .projects--wrapper{
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .hero--content{
+        width: 100%;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .skills--container{
+        width: 100%;
+    }
+    .skill--wrapper{
+        flex-flow: column;
+    }
+}
+
+
+@media (max-width: 400px) {
+  
+    .skill--wrapper{
+        flex-flow: column;
     }
 }
